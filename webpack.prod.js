@@ -1,6 +1,8 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const path = require("path");
+const zlib = require("zlib");
 
+const CompressionPlugin = require("compression-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 const nodeExternals = require("webpack-node-externals");
 
@@ -55,6 +57,19 @@ module.exports = [
     plugins: [
       new CopyPlugin({
         patterns: [{ from: PUBLIC_ROOT, to: DIST_PUBLIC }],
+      }),
+      new CompressionPlugin({
+        algorithm: "brotliCompress",
+        compressionOptions: {
+          params: {
+            [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
+          },
+        },
+        deleteOriginalAssets: false,
+        filename: "[path][base].br",
+        minRatio: 0.8,
+        test: /\.(js|css|html|svg)$/,
+        threshold: 10240,
       }),
     ],
     resolve: {
