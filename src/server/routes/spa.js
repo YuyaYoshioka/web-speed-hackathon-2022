@@ -7,6 +7,7 @@ import fastifyStatic from "fastify-static";
  */
 export const spaRoute = async (fastify) => {
   fastify.addHook("onSend", function (req, reply, payload, next) {
+    console.log(payload.filename);
     const filenames = payload.filename.split("/");
     const filename = filenames[filenames.length - 1];
     const names = filename.split(".");
