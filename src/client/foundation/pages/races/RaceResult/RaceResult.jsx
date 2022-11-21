@@ -51,11 +51,7 @@ export const RaceResult = () => {
       <Section dark shrink>
         <LiveBadge>Live</LiveBadge>
         <Spacer mt={Space * 2} />
-        <img
-          height={225}
-          src={data.image.replace(".jpg", "-medium.jpg")}
-          width={400}
-        />
+        <img src={data.image.replace(".jpg", "-medium.jpg")} />
       </Section>
 
       <Spacer mt={Space * 2} />
