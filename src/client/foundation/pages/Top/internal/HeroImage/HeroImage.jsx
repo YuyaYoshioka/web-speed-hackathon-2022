@@ -16,5 +16,5 @@ const Image = styled.img`
 
 /** @type {React.VFC<Props>} */
 export const HeroImage = () => {
-  return <Image alt="" src={assets("/images/hero.jpg")} />;
+  return <Image alt="" src={assets("/images/hero-small2.jpg")} />;
 };
