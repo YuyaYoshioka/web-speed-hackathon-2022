@@ -30,7 +30,7 @@ const Item = ({ image, name, number }) => {
       <img
         alt={`${name}選手のプロフィール写真`}
         height={100}
-        src={image.replace(".jpg", "-medium.jpg")}
+        src={image.replace(".jpg", "-small.jpg")}
         width={100}
       />
 
