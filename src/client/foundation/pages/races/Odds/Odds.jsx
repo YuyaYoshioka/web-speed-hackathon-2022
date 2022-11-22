@@ -75,7 +75,11 @@ export const Odds = () => {
       <Section dark shrink>
         <LiveBadge>Live</LiveBadge>
         <Spacer mt={Space * 2} />
-        <img src={data.image.replace(".jpg", "-medium.jpg")} />
+        <link
+          as="image"
+          rel="preload"
+          src={data.image.replace(".jpg", "-medium.jpg")}
+        />
       </Section>
 
       <Spacer mt={Space * 2} />
