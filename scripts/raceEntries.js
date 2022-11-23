@@ -1,4 +1,7 @@
-import _ from "lodash";
+import _fill from "lodash.fill";
+import _random from "lodash.random";
+import _sample from "lodash.sample";
+import _shuffle from "lodash.shuffle";
 import { v4 as uuid } from "uuid";
 
 import { Player, Race, RaceEntry } from "../src/model/index.js";
@@ -34,11 +37,11 @@ export async function insertRaceEntries() {
     const players = await playerRepo
       .createQueryBuilder()
       .orderBy("random()")
-      .limit(_.random(6, 12))
+      .limit(_random(6, 12))
       .getMany();
 
-    const predictionMarks = _.shuffle(
-      ["◎", "○", "△", "×", ..._.fill(Array(players.length), "")].slice(
+    const predictionMarks = _shuffle(
+      ["◎", "○", "△", "×", ..._fill(Array(players.length), "")].slice(
         0,
         players.length,
       ),
@@ -46,20 +49,20 @@ export async function insertRaceEntries() {
 
     const entries = players.map((player, idx) => {
       const { first, others, second, third } = {
-        first: _.random(0, 10),
-        others: _.random(0, 10),
-        second: _.random(0, 10),
-        third: _.random(0, 10),
+        first: _random(0, 10),
+        others: _random(0, 10),
+        second: _random(0, 10),
+        third: _random(0, 10),
       };
 
-      const rockWin = _.random(0, first);
-      const scissorsWin = _.random(0, first - rockWin);
+      const rockWin = _random(0, first);
+      const scissorsWin = _random(0, first - rockWin);
       const paperWin = first - (rockWin + scissorsWin);
 
       const totalRaces = first + second + third + others;
 
       return new RaceEntry({
-        comment: _.sample(COMMENTS),
+        comment: _sample(COMMENTS),
         first,
         firstRate: (totalRaces === 0 ? 0 : first / totalRaces) * 100,
         id: uuid(),
