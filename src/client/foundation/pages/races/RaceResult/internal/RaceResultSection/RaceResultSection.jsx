@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import { assets } from "../../../../../../foundation/utils/UrlUtils";
 import { Color, FontSize, Space } from "../../../../../styles/variables";
 
 const Wrapper = styled.div`
@@ -22,7 +23,13 @@ const Wrapper = styled.div`
 export const RaceResultSection = () => {
   return (
     <Wrapper>
-      <i className="far fa-hand-peace" />
+      <img
+        alt=""
+        decoding="async"
+        height={20}
+        src={assets("/icons/peace.svg")}
+        width={17.5}
+      />
       <div>結果はまだありません</div>
     </Wrapper>
   );
