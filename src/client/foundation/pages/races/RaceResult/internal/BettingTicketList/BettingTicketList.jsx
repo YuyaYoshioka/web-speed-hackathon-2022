@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { assets } from "../../../../../../foundation/utils/UrlUtils";
 import { EntryCombination } from "../../../../../components/displays/EntryCombination";
 import { Color, FontSize, Space } from "../../../../../styles/variables";
 
@@ -61,13 +60,7 @@ export const BettingTicketList = ({ children }) => {
   if (React.Children.count(children) === 0) {
     return (
       <Placeholder>
-        <img
-          alt=""
-          decoding="async"
-          height={20}
-          src={assets("/icons/ticket.svg")}
-          width={22.5}
-        />
+        <i className="fas fa-ticket-alt" />
         <div>購入した拳券はありません</div>
       </Placeholder>
     );
