@@ -27,11 +27,3 @@ export const Dialog = forwardRef(({ children, onClose }, ref) => {
 });
 
 Dialog.displayName = "Dialog";
-
-export const NewDialog = ({ children, onClose }) => {
-  return (
-    <StyledDialog open onClose={onClose}>
-      {children}
-    </StyledDialog>
-  );
-};
