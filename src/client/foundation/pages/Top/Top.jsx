@@ -1,5 +1,5 @@
 import moment from "moment-timezone";
-import React, { useCallback, useRef } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -45,7 +45,7 @@ export const Top = () => {
     if (chargeDialogRef.current === null) {
       return;
     }
-
+    setShowDialog(true);
     chargeDialogRef.current.showModal();
   }, []);
 
@@ -64,6 +64,8 @@ export const Top = () => {
             isSameDay(race.startAt, date),
           )
       : [];
+
+  const [showDialog, setShowDialog] = useState(false);
 
   return (
     <Container>
@@ -95,7 +97,12 @@ export const Top = () => {
         )}
       </section>
 
-      <ChargeDialog ref={chargeDialogRef} onComplete={handleCompleteCharge} />
+      <ChargeDialog
+        ref={chargeDialogRef}
+        closeDialog={() => setShowDialog(false)}
+        onComplete={handleCompleteCharge}
+        showDialog={showDialog}
+      />
     </Container>
   );
 };
