@@ -1752,13 +1752,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lodash@npm:^4.14.178":
-  version: 4.14.179
-  resolution: "@types/lodash@npm:4.14.179"
-  checksum: 71faa0c8071732c2b7f0bd092850d3cea96fc7912055d57d819cf2ab399a64150e4190d8a4ea35a0905662ddc118be9d2abd55891d8047c085acf98608156149
-  languageName: node
-  linkType: hard
-
 "@types/mdast@npm:^3.0.0":
   version: 3.0.10
   resolution: "@types/mdast@npm:3.0.10"
@@ -5855,6 +5848,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.fill@npm:^3.4.0":
+  version: 3.4.0
+  resolution: "lodash.fill@npm:3.4.0"
+  checksum: 1d13791f09f47d04b2fc8375fda9d414d103705f243f3f4e4e81ba1fb4abb91eac1da34ac5a6632c6f2aced8b647dfba9fcbe7b1ca3ad0243c572938511332fc
+  languageName: node
+  linkType: hard
+
 "lodash.merge@npm:^4.6.2":
   version: 4.6.2
   resolution: "lodash.merge@npm:4.6.2"
@@ -5862,10 +5862,59 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.random@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "lodash.random@npm:3.2.0"
+  checksum: a731327ee8aba7ac199ea8715fe8890f8665e025207db6ff1768f0feb357f9ca51ec700a6fb2d99421cbe7cd978b17d170633444db6be2e815037ac46df961c5
+  languageName: node
+  linkType: hard
+
+"lodash.range@npm:^3.2.0":
+  version: 3.2.0
+  resolution: "lodash.range@npm:3.2.0"
+  checksum: 9355140c0ae66c51e1828fe6b4aa64bfc986bcf3afeae720904cc89e0b15ec8d5e174454cbbf087485447e67e4b1d9000d7e53e89c7deea892d3c0b472461035
+  languageName: node
+  linkType: hard
+
+"lodash.sample@npm:^4.2.1":
+  version: 4.2.1
+  resolution: "lodash.sample@npm:4.2.1"
+  checksum: 8d93c1db133b7c7c5d6f87eb6e512c83dc97baf1de56a2013eff17fd8ddffa5a0901541e320933d9fdb6a4d90e8a597d44bb7aa1e4fa6eca4da534802941e4ab
+  languageName: node
+  linkType: hard
+
+"lodash.shuffle@npm:^4.2.0":
+  version: 4.2.0
+  resolution: "lodash.shuffle@npm:4.2.0"
+  checksum: 3d451e16c18cd7e7c4c265199c87f0a1fff2976b8bf14d94de20a445e76f61a5c39b62181e5660e8f3a1602518b15a3d7d54732067cdef9d446e47d1e8f48938
+  languageName: node
+  linkType: hard
+
+"lodash.sortby@npm:^4.7.0":
+  version: 4.7.0
+  resolution: "lodash.sortby@npm:4.7.0"
+  checksum: db170c9396d29d11fe9a9f25668c4993e0c1331bcb941ddbd48fb76f492e732add7f2a47cfdf8e9d740fa59ac41bbfaf931d268bc72aab3ab49e9f89354d718c
+  languageName: node
+  linkType: hard
+
+"lodash.take@npm:^4.1.1":
+  version: 4.1.1
+  resolution: "lodash.take@npm:4.1.1"
+  checksum: 5786572bb5865ba9f82e1a80f5a2ee861b38570fe7440af33cba4707dc87138b2dec836936fe87534f3da89f6899dd6d0f7287c1c4c3f0117cbfdb1aa6981a63
+  languageName: node
+  linkType: hard
+
 "lodash.truncate@npm:^4.4.2":
   version: 4.4.2
   resolution: "lodash.truncate@npm:4.4.2"
   checksum: b463d8a382cfb5f0e71c504dcb6f807a7bd379ff1ea216669aa42c52fc28c54e404bfbd96791aa09e6df0de2c1d7b8f1b7f4b1a61f324d38fe98bc535aeee4f5
+  languageName: node
+  linkType: hard
+
+"lodash.without@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.without@npm:4.4.0"
+  checksum: 8cef752edd4ed4065be2a8fd30ea52c0bb27b0cb6c34742f595263c72ee0c3a188572affb477ef18a4dd4d0347fe1a4e580b70d4e36f37323d7924d2e6046bd6
   languageName: node
   linkType: hard
 
@@ -9476,7 +9525,6 @@ __metadata:
     "@babel/runtime": ^7.17.2
     "@fortawesome/fontawesome-free": ^5.15.4
     "@stylelint/postcss-css-in-js": ^0.37.2
-    "@types/lodash": ^4.14.178
     "@types/node": ^16.11.68
     "@types/react": ^17.0.38
     "@types/react-dom": ^17.0.11
@@ -9503,7 +9551,14 @@ __metadata:
     fastify-sensible: ^3.1.2
     fastify-static: ^4.5.0
     framer-motion: ^6.2.8
-    lodash: ^4.17.21
+    lodash.fill: ^3.4.0
+    lodash.random: ^3.2.0
+    lodash.range: ^3.2.0
+    lodash.sample: ^4.2.1
+    lodash.shuffle: ^4.2.0
+    lodash.sortby: ^4.7.0
+    lodash.take: ^4.1.1
+    lodash.without: ^4.4.0
     modern-css-reset: ^1.4.0
     moment-timezone: ^0.5.34
     nodemon: ^2.0.15
