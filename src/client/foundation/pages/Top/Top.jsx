@@ -1,5 +1,5 @@
 import moment from "moment-timezone";
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useState } from "react";
 import { useParams } from "react-router-dom";
 import styled from "styled-components";
 
@@ -32,8 +32,6 @@ const ChargeButton = styled.button`
 export const Top = () => {
   const { date = moment().format("YYYY-MM-DD") } = useParams();
 
-  const chargeDialogRef = useRef(null);
-
   const { data: userData, revalidate } = useAuthorizedFetch(
     "/api/users/me",
     authorizedJsonFetcher,
@@ -42,11 +40,7 @@ export const Top = () => {
   const { data: raceData } = useFetch("/api/races", jsonFetcher);
 
   const handleClickChargeButton = useCallback(() => {
-    if (chargeDialogRef.current === null) {
-      return;
-    }
     setShowDialog(true);
-    chargeDialogRef.current.showModal();
   }, []);
 
   const handleCompleteCharge = useCallback(() => {
@@ -97,12 +91,12 @@ export const Top = () => {
         )}
       </section>
 
-      <ChargeDialog
-        ref={chargeDialogRef}
-        closeDialog={() => setShowDialog(false)}
-        onComplete={handleCompleteCharge}
-        showDialog={showDialog}
-      />
+      {showDialog && (
+        <ChargeDialog
+          closeDialog={() => setShowDialog(false)}
+          onComplete={handleCompleteCharge}
+        />
+      )}
     </Container>
   );
 };
